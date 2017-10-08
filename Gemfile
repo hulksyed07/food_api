@@ -13,6 +13,10 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 
+gem 'devise'
+
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+
 # gem 'jsonapi-resources'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
