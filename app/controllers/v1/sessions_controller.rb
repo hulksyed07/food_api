@@ -18,7 +18,7 @@ module V1
       if user.errors.blank?
         render json: user.as_json(only: [:email, :authentication_token, :first_name, :last_name])
       else
-        render json: user.errors.messages.as_json
+        render json: user.errors.messages.as_json, status: 422
       end
     end
 
