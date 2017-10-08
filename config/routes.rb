@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       collection do
         post :login
         post :logout
+        post :sign_up
       end
     end
   end
