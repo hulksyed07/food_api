@@ -15,9 +15,14 @@ gem 'puma', '~> 3.0'
 
 gem 'devise'
 
+# To add authentication token to user on every save
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
+# To serialize json
 gem 'active_model_serializers'
+
+# To enable CORS(Cross Origin Resource sharing)
+gem 'rack-cors', :require => 'rack/cors'
 
 # gem 'jsonapi-resources'
 

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   root 'v1/categories#index'
 
 end
