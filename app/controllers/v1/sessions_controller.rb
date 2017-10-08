@@ -1,6 +1,7 @@
 module V1
   class SessionsController < ApplicationController
     skip_before_action :authenticate_user!
+    # before_action :serialize_json_data, only: [:sign_up]
 
     def login
       user = User.find_by(email: params[:email])
@@ -35,5 +36,9 @@ module V1
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name)
     end
+
+    # def serialize_json_data
+    #   params = ActiveModelSerializers::Deserialization.jsonapi_parse(ActionController::Parameters.new(params))
+    # end
   end
 end
