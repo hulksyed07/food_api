@@ -33,6 +33,9 @@ gem 'rack-cors', :require => 'rack/cors'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Uncomment the below line to run on Windows
+# gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
