@@ -7,9 +7,7 @@ module V1
       user = User.find_by(email: params[:email])
 
       if user && user.valid_password?(params[:password])
-        response.headers['Access-Token'] = user.authentication_token
-        # response.headers['Access-Control-Expose-Headers'] = 'HTTP_ACCESS_TOKEN'
-        render json: user.as_json(only: [:email, :first_name, :last_name])
+        render json: {authentication_token: user.authentication_token, user: user.as_json(only: [:email, :first_name, :last_name])}
       else
         head(:unauthorized)
       end  
@@ -18,8 +16,7 @@ module V1
     def sign_up
       user = User.create(user_params)
       if user.errors.blank?
-        response.headers['HTTP_ACCESS_TOKEN']  = user.authentication_token
-        render json: user.as_json(only: [:email, :first_name, :last_name])
+        render json: {authentication_token: user.authentication_token, user: user.as_json(only: [:email, :first_name, :last_name])}
       else
         render json: user.errors.messages.as_json, status: 422
       end
