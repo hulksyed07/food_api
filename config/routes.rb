@@ -13,6 +13,11 @@ Rails.application.routes.draw do
         post :sign_up
       end
     end
+    resources :profiles do
+      collection do
+        post :update_avatar
+      end
+    end
   end
 
   root 'v1/categories#index'

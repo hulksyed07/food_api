@@ -24,6 +24,9 @@ gem 'active_model_serializers'
 # To enable CORS(Cross Origin Resource sharing)
 gem 'rack-cors', :require => 'rack/cors'
 
+# To save attachments
+gem "paperclip", "~> 5.0.0"
+
 # gem 'jsonapi-resources'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
