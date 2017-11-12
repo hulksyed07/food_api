@@ -2,10 +2,15 @@ module V1
   class ProfilesController < ApplicationController
     def update_avatar
       if current_user.update(avatar: decode_base64)
-        current_user.avatar
+        send_file("public#{current_user.avatar.url.split('?')[0]}")
       else
         puts "Some error occurred"
       end
+    end
+
+    def get_user_avatar
+      # send_data("#{Rails.root}/public#{current_user.avatar.url}")
+      send_file("public#{current_user.avatar.url.split('?')[0]}")
     end
 
     private

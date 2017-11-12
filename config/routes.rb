@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :profiles do
       collection do
         post :update_avatar
+        get :get_user_avatar
       end
     end
   end
